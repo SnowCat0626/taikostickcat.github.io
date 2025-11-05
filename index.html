@@ -3,217 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ねこ-バチ工房 | 太鼓の達人 専用鼓棒</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Zen+Maru+Gothic:wght@500&display=swap');
-    
-    body {
-      margin: 0;
-      background-color: #0e0e0e;
-      color: #f5f5f5;
-      font-family: 'Zen Maru Gothic', sans-serif;
-      overflow-x: hidden;
-    }
-
-    /* ===== 頂部區域 ===== */
-    header {
-      position: relative;
-      height: 100vh;
-      background: url('https://images.unsplash.com/photo-1605100804763-28bfb38096a0?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: radial-gradient(circle at center, rgba(0,0,0,0.4), rgba(0,0,0,0.9));
-      z-index: 0;
-    }
-
-    .smoke {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: url('https://i.ibb.co/NjB41nF/smoke.png') repeat;
-      opacity: 0.15;
-      animation: smokeMove 60s linear infinite;
-      z-index: 1;
-    }
-
-    @keyframes smokeMove {
-      from { background-position: 0 0; }
-      to { background-position: 1000px 0; }
-    }
-
-    header h1 {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 3rem;
-      color: #f0d78c;
-      letter-spacing: 4px;
-      z-index: 2;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #ddd;
-      margin-top: 10px;
-      z-index: 2;
-    }
-
-    .nav-buttons {
-      z-index: 2;
-      margin-top: 30px;
-    }
-
-    .nav-buttons a {
-      color: #f0d78c;
-      border: 1px solid #f0d78c;
-      padding: 10px 20px;
-      margin: 0 10px;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-    }
-
-    .nav-buttons a:hover {
-      background: #f0d78c;
-      color: #000;
-    }
-
-    section {
-      padding: 80px 10%;
-      text-align: center;
-      background: #121212;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-
-    section h2 {
-      font-family: 'Noto Serif JP', serif;
-      color: #f0d78c;
-      font-size: 2rem;
-      margin-bottom: 40px;
-    }
-
-    /* ===== 產品區 ===== */
-    .product-gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-    }
-
-    .product {
-      background: #1a1a1a;
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 12px;
-      padding: 20px;
-      width: 280px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    }
-
-    .product img {
-      width: 100%;
-      border-radius: 8px;
-    }
-
-    .product h3 {
-      color: #f5f5f5;
-      margin-top: 15px;
-      font-size: 1.1rem;
-    }
-
-    /* ===== 顧客回饋 ===== */
-    .reviews {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .review {
-      background: #1a1a1a;
-      border-left: 4px solid #f0d78c;
-      padding: 20px;
-      margin-bottom: 20px;
-      font-style: italic;
-      color: #ccc;
-    }
-
-    .review span {
-      display: block;
-      text-align: right;
-      margin-top: 10px;
-      color: #f0d78c;
-    }
-
-    /* ===== 製作者介紹 ===== */
-    .maker {
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.8;
-      color: #ddd;
-    }
-
-    footer {
-      background: #0a0a0a;
-      color: #888;
-      text-align: center;
-      padding: 30px 0;
-      font-size: 0.9rem;
-    }
-  </style>
+  <title>ねこ-バチ工房 | 太鼓の達人 專用鼓棒</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
+  <!-- 🌫 開場主視覺 -->
+  <header id="hero">
     <div class="smoke"></div>
-    <h1>ねこ-バチ工房</h1>
-    <p>太鼓の達人 専用鼓棒 — 職人手作の音を、あなたに。</p>
-    <div class="nav-buttons">
-      <a href="#products">產品介紹</a>
-      <a href="#reviews">顧客回饋</a>
-      <a href="#maker">製作者</a>
+    <div class="glow-layer"></div>
+
+    <div class="hero-content">
+      
+      <h1 class="logo-title">ねこ-バチ工房</h1>
+      <p class="logo-sub">太鼓の達人 専用鼓棒 — 職人手作の音を、あなたに。</p>
+      <nav class="nav-buttons fade-in">
+        <a href="#products">產品介紹</a>
+        <a href="#heroes">英雄榜</a>
+        <a href="#maker">製作者</a>
+      </nav>
     </div>
   </header>
 
-  <section id="products">
+  <!-- 🥁 產品區 -->
+  <section id="products" class="section fade-section">
     <h2>產品介紹</h2>
     <div class="product-gallery">
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1583573636256-5b49c35a9ab2?auto=format&fit=crop&w=800&q=80" alt="鼓棒">
+      <div class="product card-animate">
+        <img src="assets/img/typea.jpg" alt="鼓棒">
         <h3>ねこ-バチ Type A</h3>
         <p>手工打磨木質鼓棒，平衡與音感兼具。</p>
+        <a href="product-detail.html" class="btn">查看更多</a>
       </div>
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1598969894145-44cfb63e1d70?auto=format&fit=crop&w=800&q=80" alt="鼓棒">
+      <div class="product card-animate">
+        <img src="assets/img/typeb.jpg" alt="鼓棒">
         <h3>ねこ-バチ Type B</h3>
         <p>特製握柄加工，適合高速打擊。</p>
+        <a href="product-detail.html" class="btn">查看更多</a>
       </div>
     </div>
   </section>
 
-  <section id="reviews">
-    <h2>顧客回饋</h2>
-    <div class="reviews">
-      <div class="review">
-        「打起來的手感真的和市售的不一樣，音色也更清脆！」<span>- Taiko 玩家 Ryo</span>
+  <!-- 🏆 英雄榜 -->
+  <section id="heroes" class="section fade-section">
+    <h2>英雄榜</h2>
+    <p class="subtitle">以下玩家使用「逗貓棒」成功挑戰段位道場，榮登英雄榜 </p>
+
+    <div class="hero-board">
+      <div class="hero gold card-animate">
+        <div class="halo"></div>
+        <img src="assets/img/heroa.jpg" alt="玩家1">
+        <h3>小咔 くになか </h3>
+        <p>達人（2024 段位道場）</p>
       </div>
-      <div class="review">
-        「ねこ-バチの職人精神真的令人敬佩，太鼓打起來超順手！」<span>- 玩家 みずき</span>
+
+      <div class="hero silver card-animate">
+        <div class="halo"></div>
+        <img src="assets/img/logo.png" alt="玩家2">
+        <h3>雪貓</h3>
+        <p>超人（2024 段位道場）</p>
       </div>
-      <p>🎥 <a href="#" style="color:#f0d78c;">觀看玩家影片</a></p>
+
+      <div class="hero bronze card-animate">
+        <div class="halo"></div>
+        <img src="" alt="玩家3">
+        <h3></h3>
+        <p>名人（2025 段位道場）</p>
+      </div>
     </div>
   </section>
 
-  <section id="maker">
+  <!-- 製作者 -->
+  <section id="maker" class="section fade-section">
     <h2>製作者介紹</h2>
     <div class="maker">
-      <p>你好，我是「ねこ」，一位熱愛太鼓之達人的玩家兼手工鼓棒製作者。  
-      從 2024 年開始製作「逗貓棒」，至今已超過百副手工製品送到玩家手中。</p>
-      <p>每一副鼓棒都經過精密打磨與試打調整，為的是讓每位玩家在打擊時都能感受到最純粹的節奏手感。  
-      我相信，鼓棒不只是工具，而是與音樂共鳴的延伸。</p>
+      <p>你好，我是「雪貓」，一位熱愛太鼓達人的玩家兼鼓棒製作者。</p>
+      <p>每一副鼓棒都經過微調與試打調整，為的是讓每位玩家都能感受到鼓棒帶來完美的感受。</p>
       <p>— ねこ 🐾</p>
     </div>
   </section>
@@ -221,5 +85,7 @@
   <footer>
     © 2025 ねこ-バチ工房 | Taiko no Tatsujin Custom Drumsticks
   </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
