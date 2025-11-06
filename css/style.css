@@ -8,6 +8,7 @@
 }
 
 body {
+  font-family: 'New Tegomin', 'Noto Serif JP', serif;
   margin: 0;
   background-color: var(--dark);
   color: #f5f5f5;
@@ -247,6 +248,60 @@ section h2 {
   margin-bottom: 15px;
 }
 
+/* === 其他英雄列表 === */
+.other-heroes {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.toggle-btn {
+  background: rgba(255,215,0,0.1);
+  border: 1px solid rgba(255,215,0,0.3);
+  color: gold;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background: rgba(255,215,0,0.2);
+  transform: scale(1.05);
+}
+
+.other-list {
+  max-height: 0;
+  opacity: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1rem;
+  overflow: hidden;
+  transition: all 0.6s ease;
+}
+
+.other-player {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,215,0,0.2);
+  border-radius: 6px;
+  padding: 8px 14px;
+  color: #fff;
+  font-size: 0.9rem;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.other-player:hover {
+  background: rgba(255,215,0,0.15);
+  transform: translateY(-3px);
+}
+
+.other-list.show {
+  max-height: 500px; /* 根據名單長度調整 */
+  opacity: 1;
+}
+
+
 /* ======================
    製作者
 ====================== */
@@ -291,6 +346,7 @@ footer {
   animation: logoFade 2s ease forwards 0.5s;
   text-shadow: 0 0 25px rgba(240,215,140,0.5);
 }
+
 .logo-sub {
   opacity: 0;
   animation: logoFade 2s ease forwards 1.2s;
@@ -299,6 +355,12 @@ footer {
 @keyframes logoFade {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* 主標題特別加重筆感 */
+.logo-title, h1, h2 {
+  font-family: 'New Tegomin', 'Noto Serif JP', serif;
+  letter-spacing: 2px;
 }
 
 /* === 新增：柔光流動層 === */
@@ -367,4 +429,41 @@ footer {
 .logo-sub {
   opacity: 1 !important;          /* 強制維持可見 */
   animation-fill-mode: forwards;  /* 動畫結束後保持最後狀態 */
+}
+
+/* === 手機版樣式（RWD） === */
+@media (max-width: 768px) {
+  .logo-title {
+    font-size: 2.4rem;   /* 縮小字體讓它能放下一行 */
+    white-space: nowrap; /* 強制不換行 */
+  }
+
+  .logo-sub {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  nav.nav-buttons a {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+
+  .product-gallery {
+    flex-direction: column; /* 產品由橫向改為直向排列 */
+    align-items: center;
+  }
+
+  .product img {
+    width: 90%;
+    height: auto;
+  }
+
+  .hero-board {
+    flex-direction: column; /* 英雄榜三人上下排列 */
+    gap: 1.5rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
 }

@@ -26,4 +26,14 @@ const observer = new IntersectionObserver((entries) => {
 
 fadeSections.forEach(section => observer.observe(section));
 
+// 展開 / 收起其他玩家
+const toggleBtn = document.getElementById("toggle-others");
+const otherList = document.querySelector(".other-list");
+if (toggleBtn && otherList) {
+  toggleBtn.addEventListener("click", () => {
+    const isOpen = otherList.classList.toggle("show");
+    toggleBtn.textContent = isOpen ? "▲ 收起其他玩家 ▲" : "▼ 展開更多玩家 ▼";
+  });
+}
+
 
