@@ -16,6 +16,7 @@ body {
   overflow-x: hidden;
 }
 
+
 /* 頂部主視覺 */
 header {
   position: relative;
@@ -124,6 +125,7 @@ header::before {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
 
 /* 按鈕區 */
 .nav-buttons {
@@ -465,5 +467,60 @@ footer {
 
   footer {
     font-size: 0.8rem;
+  }
+}
+
+/* === 主視覺LOGO === */
+.main-logo {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+  display: block;
+  box-shadow: 0 0 35px rgb(238, 255, 7);
+  animation: logoFloat 2s ease-in-out infinite alternate;
+  z-index: 10;
+  position: relative;
+}
+
+/* 浮動感 */
+@keyframes logoFloat {
+  0% { transform: translateY(0); filter: brightness(1); }
+  100% { transform: translateY(-5px); filter: brightness(2.0); }
+}
+
+/* === 製作者LOGO === */
+.maker-logo {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.maker-logo img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  opacity: 0.9;
+  box-shadow: 0 0 35px rgba(236, 10, 10, 0.623);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.maker-logo img:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+/* === 手機RWD === */
+@media (max-width: 768px) {
+  .main-logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0.5rem;
+  }
+  .maker-logo img {
+    width: 90px;
+    height: 90px;
   }
 }
