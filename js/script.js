@@ -5,7 +5,7 @@ window.addEventListener("load", () => {
 
 // 只淡出背景，不影響標題
 window.addEventListener("scroll", () => {
-  const smoke = document.querySelector(".smoke");
+  const smoke = document.querySelector(".video-bg");
   const glow = document.querySelector(".glow-layer");
 
   // 限制透明度最小值，避免整個消失
@@ -25,3 +25,5 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.2 });
 
 fadeSections.forEach(section => observer.observe(section));
+
+
